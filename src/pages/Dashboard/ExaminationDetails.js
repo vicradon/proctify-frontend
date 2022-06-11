@@ -33,6 +33,7 @@ function ExaminationDetails() {
       created_at: "01-06-2021",
     },
   ];
+  const handleTestModelButtonClick = (id) => {};
   return (
     <DashboardLayout>
       <Flex mb={"2rem"} justifyContent={"space-between"}>
@@ -54,11 +55,9 @@ function ExaminationDetails() {
             <Thead>
               <Tr height={"70px"}>
                 <Th>Id</Th>
-                <Th>Surname</Th>
-                <Th>First Name</Th>
-                <Th>Middle name</Th>
-                <Th>Email</Th>
+                <Th>Name</Th>
                 <Th>Created</Th>
+                <Th></Th>
               </Tr>
             </Thead>
 
@@ -67,11 +66,15 @@ function ExaminationDetails() {
                 return (
                   <Tr height={"70px"} key={row.id}>
                     <Td>{row.id}</Td>
-                    <Td>{row.surname}</Td>
-                    <Td>{row.first_name}</Td>
-                    <Td>{row.middle_name}</Td>
-                    <Td>{row.email}</Td>
-                    <Td>{row.created_at}</Td>
+                    <Td>{row.name}</Td>
+                    <Td>{row.created}</Td>
+                    <Td>
+                      <Button
+                        onClick={() => handleTestModelButtonClick(row.id)}
+                      >
+                        Test Model
+                      </Button>
+                    </Td>
                   </Tr>
                 );
               })}
