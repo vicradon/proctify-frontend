@@ -13,29 +13,32 @@ import {
 import React from "react";
 import DashboardLayout from "../../Layout/DashboardLayout";
 
-function Examinations() {
+function Registrants() {
   const tableRows = [
     {
-      id: "1",
-      name: "JAMB 2017",
+      id: 1,
+      surname: "Nemb",
+      first_name: "Voms",
+      middle_name: "Vims",
+      email: "coms@ca.com",
       created_at: "01-06-2021",
-      status: "inactive",
     },
     {
-      id: "2",
-      name: "JAMB 2018",
-
+      id: 2,
+      surname: "Kwoms",
+      first_name: "Rems",
+      middle_name: "Livks",
+      email: "nemb@nem.com",
       created_at: "01-06-2021",
-      status: "active",
     },
   ];
 
   return (
     <DashboardLayout>
       <Flex mb={"2rem"} justifyContent={"space-between"}>
-        <Heading size={"lg"}>Examinations</Heading>
+        <Heading size={"lg"}>Registrants</Heading>
         <Button colorScheme={"brand"} bgColor={"brand.500"}>
-          Add Examination
+          Add Registrant
         </Button>
       </Flex>
 
@@ -48,9 +51,11 @@ function Examinations() {
           <Thead>
             <Tr height={"70px"}>
               <Th>Id</Th>
-              <Th>Name</Th>
+              <Th>Surname</Th>
+              <Th>First Name</Th>
+              <Th>Middle name</Th>
+              <Th>Email</Th>
               <Th>Created</Th>
-              <Th>Status</Th>
             </Tr>
           </Thead>
 
@@ -59,9 +64,11 @@ function Examinations() {
               return (
                 <Tr height={"70px"} key={row.id}>
                   <Td>{row.id}</Td>
-                  <Td>{row.name}</Td>
+                  <Td>{row.surname}</Td>
+                  <Td>{row.first_name}</Td>
+                  <Td>{row.middle_name}</Td>
+                  <Td>{row.email}</Td>
                   <Td>{row.created_at}</Td>
-                  <Td>{row.status}</Td>
                 </Tr>
               );
             })}
@@ -72,4 +79,4 @@ function Examinations() {
   );
 }
 
-export default Examinations;
+export default Registrants;

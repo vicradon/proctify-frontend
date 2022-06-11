@@ -1,17 +1,40 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, calc, Heading, Link } from "@chakra-ui/react";
 import React from "react";
-import { Link } from "react-router-dom";
 
 function DashboardLayout({ children }) {
   return (
     <Box position={"relative"}>
-      <Box position={"fixed"} width={"250px"} padding={"2rem"}>
-        <Heading size={"xl"}>Proctify</Heading>
+      <Box
+        bg={"gray.300"}
+        height={"100vh"}
+        position={"fixed"}
+        width={"250px"}
+        padding={"2rem"}
+      >
+        <Heading mb={"3rem"} size={"xl"}>
+          Proctify
+        </Heading>
 
-        <Link to="/dashboard">Dashboard</Link>
+        <Link display={"block"} mb={"1rem"} href="/dashboard">
+          Dashboard
+        </Link>
+        <Link display={"block"} mb={"1rem"} href="/dashboard/examinations">
+          Examinations
+        </Link>
+        <Link display={"block"} mb={"1rem"} href="/dashboard/registrants">
+          Registrants
+        </Link>
       </Box>
 
-      <Box paddingY={"2rem"}>{children}</Box>
+      <Box
+        position={"absolute"}
+        width={"calc(100vw - 250px)"}
+        left={"250px"}
+        paddingY={"2rem"}
+        paddingX={"2rem"}
+      >
+        {children}
+      </Box>
     </Box>
   );
 }
