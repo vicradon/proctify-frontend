@@ -1,4 +1,4 @@
-import { Box, calc, Heading, Link } from "@chakra-ui/react";
+import { Box, Heading, Link } from "@chakra-ui/react";
 import React from "react";
 
 function DashboardLayout({ children }) {

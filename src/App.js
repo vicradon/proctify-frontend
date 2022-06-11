@@ -1,6 +1,7 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import ExaminationDetails from "./pages/Dashboard/ExaminationDetails";
 import Examinations from "./pages/Dashboard/Examinations";
 import Registrants from "./pages/Dashboard/Registrants";
 import Home from "./pages/Home";
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route exact path="/dashboard/examinations">
             <Examinations />
+          </Route>
+          <Route exact path="/dashboard/examinations/:id">
+            <ExaminationDetails />
           </Route>
           <Route exact path="/dashboard/registrants">
             <Registrants />

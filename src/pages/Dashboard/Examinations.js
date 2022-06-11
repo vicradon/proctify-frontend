@@ -57,7 +57,14 @@ function Examinations() {
           <Tbody>
             {tableRows.map((row) => {
               return (
-                <Tr height={"70px"} key={row.id}>
+                <Tr
+                  cursor={"pointer"}
+                  onClick={() => {
+                    window.location.href = `/dashboard/examinations/${row.id}`;
+                  }}
+                  height={"70px"}
+                  key={row.id}
+                >
                   <Td>{row.id}</Td>
                   <Td>{row.name}</Td>
                   <Td>{row.created_at}</Td>
