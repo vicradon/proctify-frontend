@@ -40,7 +40,9 @@ function ExaminationDetails() {
         <Heading size={"lg"}>JAMB 2018</Heading>
 
         <Button colorScheme={"brand"} bgColor={"brand.500"}>
-          Add Registrant
+          <a href="/dashboard/examinations/add-registrant-model">
+            Add Registrant
+          </a>
         </Button>
       </Flex>
 
@@ -66,8 +68,8 @@ function ExaminationDetails() {
                 return (
                   <Tr height={"70px"} key={row.id}>
                     <Td>{row.id}</Td>
-                    <Td>{row.name}</Td>
-                    <Td>{row.created}</Td>
+                    <Td>{row.first_name + " " + row.surname}</Td>
+                    <Td>{row.created_at}</Td>
                     <Td>
                       <Button
                         onClick={() => handleTestModelButtonClick(row.id)}

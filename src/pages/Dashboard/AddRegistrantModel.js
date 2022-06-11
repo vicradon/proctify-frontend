@@ -101,44 +101,47 @@ function AddRegistrantModel() {
           </Select>
         </FormControl>
 
-        {capturedPhotos.map((capturedPhoto) => (
-          <Flex
-            key={capturedPhoto.name}
-            flexFlow={"column"}
-            alignItems={"center"}
-          >
-            <Image
-              src={
-                capturedPhoto.imageSrc
-                  ? capturedPhoto.imageSrc
-                  : PlaceholderImage
-              }
-              alt={capturedPhoto.name}
-            />
-            <Box my={"1rem"}>
-              <Text mb={"0.5rem"}>{capturedPhoto.name}</Text>
-              <Button
-                onClick={() => {
-                  setActiveImage(capturedPhoto.name);
-                  onOpen();
-                }}
-              >
-                Capture
-              </Button>
-            </Box>
-          </Flex>
-        ))}
+        {selectedStudentEmail &&
+          capturedPhotos.map((capturedPhoto) => (
+            <Flex
+              key={capturedPhoto.name}
+              flexFlow={"column"}
+              alignItems={"center"}
+            >
+              <Image
+                src={
+                  capturedPhoto.imageSrc
+                    ? capturedPhoto.imageSrc
+                    : PlaceholderImage
+                }
+                alt={capturedPhoto.name}
+              />
+              <Box my={"1rem"}>
+                <Text mb={"0.5rem"}>{capturedPhoto.name}</Text>
+                <Button
+                  onClick={() => {
+                    setActiveImage(capturedPhoto.name);
+                    onOpen();
+                  }}
+                >
+                  Capture
+                </Button>
+              </Box>
+            </Flex>
+          ))}
       </Grid>
 
-      <Flex justifyContent={"end"}>
-        <Button
-          onClick={() => console.log(capturedPhotos)}
-          bgColor={"Background.500"}
-          colorScheme={"brand"}
-        >
-          Train Model
-        </Button>
-      </Flex>
+      {selectedStudentEmail && (
+        <Flex justifyContent={"end"}>
+          <Button
+            onClick={() => console.log(capturedPhotos)}
+            bgColor={"Background.500"}
+            colorScheme={"brand"}
+          >
+            Train Model
+          </Button>
+        </Flex>
+      )}
 
       <ImageCaptureModal
         onClose={onClose}
