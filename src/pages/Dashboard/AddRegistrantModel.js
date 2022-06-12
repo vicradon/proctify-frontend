@@ -15,16 +15,21 @@ import React, { useState } from "react";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import PlaceholderImage from "../../assets/images/placeholder-image.png";
 import ImageCaptureModal from "../../components/Modals/ImageCaptureModal";
+import toast from "react-hot-toast";
 
 function AddRegistrantModel() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [students] = useState([
     {
-      id: 1,
-      first_name: "stuff",
-      last_name: "nemb",
-      email: "stuff@nemb.com",
+      id: 2,
+      surname: "Boyle",
+      first_name: "Ruth",
+      middle_name: "Chiamaka",
+      email: "ruth.boyle@gmail.com",
+      model_url:
+        "https://proctifystorage.blob.core.windows.net/student-models/djhd7894uidjsa8ugyodib.jpeg",
+      created_at: "01-06-2021",
     },
   ]);
   const [selectedStudentEmail, setSelectedStudentEmail] = useState("");
@@ -134,7 +139,7 @@ function AddRegistrantModel() {
       {selectedStudentEmail && (
         <Flex justifyContent={"end"}>
           <Button
-            onClick={() => console.log(capturedPhotos)}
+            onClick={() => toast.success("Dataset sent to Azure for training")}
             bgColor={"Background.500"}
             colorScheme={"brand"}
           >

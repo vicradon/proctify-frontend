@@ -38,8 +38,11 @@ function Verification() {
               width: `${box.width * 100}%`,
               height: `${box.height * 100}%`,
               zIndex: 1,
+              color: "white",
             }}
-          />
+          >
+            Osinachi Chukwujama
+          </div>
         ))}
         <Webcam
           ref={webcamRef}

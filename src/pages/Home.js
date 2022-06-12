@@ -5,8 +5,6 @@ import {
   Flex,
   Heading,
   Image,
-  ListItem,
-  OrderedList,
   Text,
   Link,
 } from "@chakra-ui/react";
@@ -25,7 +23,7 @@ function Home() {
       backgroundRepeat={"no-repeat"}
       backgroundPosition={"center"}
       backgroundImage={`url('${HexagonBackground}')`}
-      height={"100%"}
+      height={"100vh"}
     >
       <Container maxW={"container.xl"}>
         <Flex
@@ -117,25 +115,6 @@ function Home() {
               </Flex>
             </ProductInfoCard>
           </Flex>
-        </Box>
-
-        <Box>
-          <Heading mb={"2rem"} textAlign={"center"} color={"#333"} size={"lg"}>
-            How It Works
-          </Heading>
-          <OrderedList>
-            <ListItem>
-              JAMB trains a computer vision model using the video recognition of
-              all students
-            </ListItem>
-
-            <ListItem>The model is uploaded to the cloud</ListItem>
-
-            <ListItem>
-              The web app downloads the trained model and uses it on the edge
-              during the exam
-            </ListItem>
-          </OrderedList>
         </Box>
       </Container>
     </Box>

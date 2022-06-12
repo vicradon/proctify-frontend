@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Verification from "./pages/Verification";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const colors = {
@@ -24,6 +25,29 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={{
+          className: "",
+          duration: 5000,
+          style: {
+            color: "#fff",
+          },
+          success: {
+            duration: 3000,
+            style: {
+              background: "green",
+            },
+          },
+          error: {
+            style: {
+              background: "red",
+            },
+          },
+        }}
+      />
+
       <Router>
         <Switch>
           <Route exact path="/">

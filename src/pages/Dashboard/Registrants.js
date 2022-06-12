@@ -17,18 +17,22 @@ function Registrants() {
   const tableRows = [
     {
       id: 1,
-      surname: "Nemb",
-      first_name: "Voms",
-      middle_name: "Vims",
-      email: "coms@ca.com",
+      surname: "Chukwujama",
+      first_name: "Osinachi",
+      middle_name: "Victor",
+      email: "osinachi.chukwujama@gmail.com",
+      model_url:
+        "https://proctifystorage.blob.core.windows.net/student-models/u83u398403ujduidjkl.json",
       created_at: "01-06-2021",
     },
     {
       id: 2,
-      surname: "Kwoms",
-      first_name: "Rems",
-      middle_name: "Livks",
-      email: "nemb@nem.com",
+      surname: "Boyle",
+      first_name: "Ruth",
+      middle_name: "Chiamaka",
+      email: "ruth.boyle@gmail.com",
+      model_url:
+        "https://proctifystorage.blob.core.windows.net/student-models/djhd7894uidjsa8ugyodib.json",
       created_at: "01-06-2021",
     },
   ];

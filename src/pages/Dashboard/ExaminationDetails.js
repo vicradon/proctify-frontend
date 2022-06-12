@@ -18,18 +18,12 @@ function ExaminationDetails() {
   const tableRows = [
     {
       id: 1,
-      surname: "Nemb",
-      first_name: "Voms",
-      middle_name: "Vims",
-      email: "coms@ca.com",
-      created_at: "01-06-2021",
-    },
-    {
-      id: 2,
-      surname: "Kwoms",
-      first_name: "Rems",
-      middle_name: "Livks",
-      email: "nemb@nem.com",
+      surname: "Chukwujama",
+      first_name: "Osinachi",
+      middle_name: "Victor",
+      email: "osinachi.chukwujama@gmail.com",
+      model_url:
+        "https://proctifystorage.blob.core.windows.net/student-models/u83u398403ujduidjkl.jpeg",
       created_at: "01-06-2021",
     },
   ];
@@ -58,6 +52,7 @@ function ExaminationDetails() {
               <Tr height={"70px"}>
                 <Th>Id</Th>
                 <Th>Name</Th>
+                <Th>Model Location</Th>
                 <Th>Created</Th>
                 <Th></Th>
               </Tr>
@@ -69,6 +64,7 @@ function ExaminationDetails() {
                   <Tr height={"70px"} key={row.id}>
                     <Td>{row.id}</Td>
                     <Td>{row.first_name + " " + row.surname}</Td>
+                    <Td>{row.model_url.substring(0, 45) + "..."}</Td>
                     <Td>{row.created_at}</Td>
                     <Td>
                       <Button
