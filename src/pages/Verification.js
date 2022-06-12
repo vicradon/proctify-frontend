@@ -2,6 +2,8 @@ import Webcam from "react-webcam";
 import { useFaceDetection } from "react-use-face-detection";
 import { FaceDetection } from "@mediapipe/face_detection";
 import { Camera } from "@mediapipe/camera_utils";
+import { Container, Flex, Heading } from "@chakra-ui/react";
+import Loader from "../components/Loaders/Loader";
 
 function Verification() {
   const { webcamRef, boundingBox, isLoading, detected, facesDetected } =
@@ -22,10 +24,13 @@ function Verification() {
     });
 
   return (
-    <div>
-      <p>{`Loading: ${isLoading}`}</p>
+    <Container maxW={"container.xl"}>
+      <Heading>Image Recognition Demo</Heading>
       <p>{`Face Detected: ${detected}`}</p>
       <p>{`Number of faces detected: ${facesDetected}`}</p>
+      <Flex justifyContent={"center"}>
+        <Loader show={isLoading} />
+      </Flex>
       <div style={{ width: "100%", height: "500px", position: "relative" }}>
         {boundingBox.map((box, index) => (
           <div
@@ -50,12 +55,11 @@ function Verification() {
           style={{
             height: "100%",
             width: "100%",
-            // objectFit: 'cover',
             position: "absolute",
           }}
         />
       </div>
-    </div>
+    </Container>
   );
 }
 
